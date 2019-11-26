@@ -13,7 +13,7 @@ class VideosController < ApplicationController
   end
 
   def subscribe
-    @videos = Video.all
+    #@videos = Video.all
   end
 
   def create

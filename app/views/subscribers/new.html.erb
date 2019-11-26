@@ -1,0 +1,26 @@
+<h1>Subscriber Page</h1>
+
+<%= form_for @subscriber, url: { action: :create } do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Subscription %><br />
+    <%= f.radio_button :validity, '1 Year' %>
+    <%= label :Subscription, '1 Year' %>
+
+    <%= f.radio_button :validity, '6 months' %>
+    <%= label :Subscription, '6 months' %>
+
+    <%= f.radio_button :validity, '1 month' %>
+    <%= label :Subscription, '1 month' %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Subscribe" %>
+  </div>
+<% end %>

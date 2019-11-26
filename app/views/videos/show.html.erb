@@ -1,0 +1,27 @@
+<div class="container">        
+        <h3>Add a Video</h3>   
+       
+            <div>   
+              <label>Video Name</label>   
+              <%= @video.name %>   
+            </div><br>  
+            <div>
+             <% if @video.movie.present? %>  
+                <%= video_tag(@video.movie, controls: true, type: 'video/mp4',style:"width: 50%") %>
+            <% end %>
+            </div><br>
+  
+            <div>   
+              <label>Price</label>   
+              <%= @video.price %>   
+            </div><br> 
+            
+            <div>   
+              <label>Description</label>   
+              <%= @video.description %>   
+            </div>   
+         
+      <div>   
+        <%= link_to 'Back', { controller: 'videos', action: 'index'} %>   
+      </div>   
+</div> 

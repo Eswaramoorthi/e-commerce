@@ -1,0 +1,35 @@
+<div class="container">   
+  <%= form_for @video, url: {action: :create} do |f| %>   
+      <div>   
+        <h3>Add a Video</h3>   
+      </div>   
+      <div>   
+        <p>   
+          <%= "<div>#{@video.errors.full_messages.first}</div>".html_safe if @video.errors.any? %>   
+        <div>   
+            <label>Video Name</label>   
+            <%= f.text_field :name %>   
+        </div>  
+
+        <div>
+            <label>Movie</label>
+            <%= f.file_field :movie %>
+        </div>
+  
+        <div>   
+           <label>Price</label>   
+           <%= f.text_field :price %>   
+        </div>   
+  
+        <div>   
+            <label>Description</label>   
+            <%= f.text_field :description %>   
+        </div>   
+         </p>   
+      </div>   
+      <div>   
+        <%= link_to 'Back', { controller: 'videos', action: 'index'} %>   
+        <%= f.submit 'Create Video' %>   
+      </div>   
+  <% end %>   
+</div>  

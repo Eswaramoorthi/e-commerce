@@ -1,0 +1,55 @@
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+
+  <%= link_to 'Sign in', logins_path %>
+
+<% end %>
+
+
+<!DOCTYPE html>   
+<html>   
+<body>   
+ <div class="container">   
+    <h3>Video List</h3>   
+     
+      <div>   
+        <%= link_to 'Add Video', new_video_path %>   
+      </div>   
+      <br>   
+    <!-- <table border="2">  -->  
+<!--       <thead>   
+      <tr>   
+        <th>Name</th>
+        <th>Thumbnail</th>
+        <th>Clip</th>   
+        <th>Price</th>   
+        <th>Description</th>   
+        <th>Actions</th>   
+      </tr>   
+      </thead>  -->  
+      <!-- <tbody> -->   
+      <% @videos.each do |video| %>   
+          <tr>   
+            <td><%= video.name %></td><br>
+            <td><%= video.thumbnail %></td><br>
+            <% if video.movie.present? %>  
+                <%= video_tag(video.movie, controls: true, type: 'video/mp4',style:"width: 50%") %>
+            <% end %> <br>  
+            <td><%= truncate(video.description) %></td>   
+               <div>   
+               <td>   
+                <%= link_to 'Show', video_path(video) %>   
+                <%= link_to 'Edit', edit_video_path(video) %>   
+                <%= link_to 'Delete', video_path(video), method: :delete %>   
+              </div>   
+            </td>   
+          </tr>   
+      <% end %>   
+      <!-- </tbody> -->   
+     <!-- </table> -->   
+    </div>   
+  </body>   
+</html>  
+

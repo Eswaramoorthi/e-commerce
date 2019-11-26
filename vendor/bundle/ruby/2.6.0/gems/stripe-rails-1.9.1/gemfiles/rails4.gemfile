@@ -1,0 +1,19 @@
+source :rubygems
+
+gem 'rails', '~> 4.2'
+
+gem 'rake'
+gem 'responders', '~> 2.0' # to support Rails 4.2
+gem 'stripe'
+
+group :test do
+  gem 'mocha'
+  gem 'simplecov', require: false
+  gem 'stripe-ruby-mock'
+  gem 'webmock'
+  # Required for system tests
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'puma'                
+  gem 'selenium-webdriver'
+end

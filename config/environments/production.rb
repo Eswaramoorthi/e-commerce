@@ -10,8 +10,8 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.stripe.secret_key = Rails.application.credentials.stripe[:production][:secret_key]
-  config.stripe.publishable_key = Rails.application.credentials.stripe[:production][:publishable_key]
+  # config.stripe.secret_key = Rails.application.credentials.stripe[:production][:secret_key]
+  # config.stripe.publishable_key = Rails.application.credentials.stripe[:production][:publishable_key]
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

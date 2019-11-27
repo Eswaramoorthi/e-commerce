@@ -8,7 +8,7 @@ gem 'paperclip', '~> 6.1'
 gem 'paperclip-av-transcoder'
 gem 'aws-sdk-s3', '~> 1.56'
 gem 'pry'
-gem 'stripe-rails'
+# gem 'stripe-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

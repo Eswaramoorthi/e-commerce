@@ -35,25 +35,25 @@ class BillingsController < ApplicationController
 	    @plans = Stripe::Plan.list.data
 	end
 
-	def subscribe
-	      if current_user.stripe_id.nil?
-	        redirect_to success_path, :flash => {:error => 'Firstly you need to enter your card'}
-	        return
-	      end
+	# def subscribe
+	#       if current_user.stripe_id.nil?
+	#         redirect_to success_path, :flash => {:error => 'Firstly you need to enter your card'}
+	#         return
+	#       end
 
-	      customer = Stripe::Customer.new current_user.stripe_id
+	#       customer = Stripe::Customer.new current_user.stripe_id
 
-	      subscriptions = Stripe::Subscription.list(customer: customer.id)
-	      subscriptions.each do |subscription|
-	        subscription.delete
-	      end
+	#       subscriptions = Stripe::Subscription.list(customer: customer.id)
+	#       subscriptions.each do |subscription|
+	#         subscription.delete
+	#       end
 
-	      plan_id = params[:plan_id]
-	      subscription = Stripe::Subscription.create({
-	                                                     customer: customer,
-	                                                     items: [{plan: plan_id}], })
-	      subscription.save
-	      redirect_to success_path
-    end
+	#       plan_id = params[:plan_id]
+	#       subscription = Stripe::Subscription.create({
+	#                                                      customer: customer,
+	#                                                      items: [{plan: plan_id}], })
+	#       subscription.save
+	#       redirect_to success_path
+ #    end
 
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :videos do
     collection do
       get :subscribe
+      get :admin
     end
   end
 

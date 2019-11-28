@@ -7,7 +7,7 @@ class LoginsController < ApplicationController
 		@user = User.find_by_email(params[:user][:email])
 		 #binding.pry
 		if @user.role == "admin"
-			redirect_to "/videos"
+			redirect_to "/videos/admin"
 		else
 			redirect_to "/videos/subscribe"		
 		end	
@@ -16,5 +16,6 @@ class LoginsController < ApplicationController
 	def show
 
 	end
+
 
 end

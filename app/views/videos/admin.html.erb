@@ -1,5 +1,5 @@
 <% if current_user %>
-    <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to 'Sign up', new_user_registration_path %>
 
   <%= link_to 'Sign in', logins_path %>
 <% else %>
@@ -7,7 +7,7 @@
 
 <% end %>
 
-<h1>subscribe</h1>
+<h1>admin</h1>
 
 <!DOCTYPE html>   
 <html>   
@@ -16,7 +16,7 @@
     <h3>Video List</h3>   
      
       <div>   
-        <%#= link_to 'Add Video', new_video_path %>   
+        <%= link_to 'Add Video', new_video_path %>   
       </div>   
       <br>   
     <!-- <table border="2">  -->  

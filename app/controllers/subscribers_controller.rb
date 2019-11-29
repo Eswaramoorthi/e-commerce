@@ -13,7 +13,8 @@ class SubscribersController < ApplicationController
 	    @subscriber = Subscriber.new(sub_params)   
 	    if @subscriber.save   
 	      flash[:notice] = 'subscribed'   
-	      redirect_to "/subscribers/payment"   
+	      redirect_to "/subscribers/payment" 
+	      #redirect_to "/subscribers/index"  
 	    else   
 	      flash[:error] = 'Failed to subscribe video!'   
 	      render :new 
@@ -23,6 +24,10 @@ class SubscribersController < ApplicationController
     def payment
 
     end 
+
+    def show
+
+    end
 
     private
     def sub_params

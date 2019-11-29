@@ -11,6 +11,7 @@ gem 'pry'
 # gem 'stripe-rails'
 
 gem 'stripe', :git =>'https://github.com/stripe/stripe-ruby'
+gem 'streamio-ffmpeg', '~> 3.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
